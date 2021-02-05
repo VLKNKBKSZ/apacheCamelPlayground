@@ -17,7 +17,7 @@ public class HttpPostRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer:vlkn?period=50000") //So this route sets up a timer which is trigger every 5 seconds,
+        from("timer:vlkn?repeatCount=1") //So this route sets up a timer which is trigger every 5 seconds,
                 .setHeader(HTTP_METHOD)     // adds header to the message
                 .constant(GET)
                 .log("HTTP METHOD: ${header" + HTTP_METHOD + "}")
@@ -28,6 +28,6 @@ public class HttpPostRoute extends RouteBuilder {
                     exchange.getIn().setBody("PAYLOADDDDDDD"); // adds dummy payload to the message.
                 })
                 .log("HttpMethod :${header." + HTTP_METHOD+ "}")
-                .to("https://camelprocessor.free.beeceptor.com/my/api/path");// makes a post request to the configured endpoint
+                .to("https://camelproc.free.beeceptor.com/my/api/path");// makes a post request to the configured endpoint
     }
 }
