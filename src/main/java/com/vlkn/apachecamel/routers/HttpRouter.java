@@ -17,7 +17,7 @@ public class HttpRouter extends RouteBuilder {
 
         JacksonDataFormat jacksonDataFormat = new JacksonDataFormat(AddressList.class);
         jacksonDataFormat.setPrettyPrint(true);
-        from("direct:https")
+        from("direct:https").routeId("https")
                 .log(LoggingLevel.INFO, this.log,"first route message is printend and then this route is executed")
                 .to("https://fakerapi.it/api/v1/addresses?_quantity=1")
                 .unmarshal(jacksonDataFormat)
