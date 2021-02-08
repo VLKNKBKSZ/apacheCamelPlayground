@@ -6,7 +6,7 @@ import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.jackson.JacksonDataFormat;
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class HttpRouter extends RouteBuilder {
 
 
