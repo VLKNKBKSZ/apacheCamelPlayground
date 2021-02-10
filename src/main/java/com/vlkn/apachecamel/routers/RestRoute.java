@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class RestRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
+
         restConfiguration()
                 .component("netty-http")
                 .host("localhost")
